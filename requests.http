@@ -1,0 +1,71 @@
+### Service Registry
+# Open http://localhost:8761 in the browser to view the Eureka dashboard.
+
+### User Service API Requests (Port 8081)
+
+# Create User
+POST http://localhost:8081/api/users
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com"
+}
+
+###
+
+# Get User by ID
+GET http://localhost:8081/api/users/1
+
+###
+
+# Get All Users
+GET http://localhost:8081/api/users
+
+###
+
+### Product Service API Requests (Port 8082)
+
+# Create Product
+POST http://localhost:8082/api/products
+Content-Type: application/json
+
+{
+  "name": "Smartphone",
+  "price": 699.99
+}
+
+###
+
+# Get Product by ID
+GET http://localhost:8082/api/products/1
+
+###
+
+# Get All Products
+GET http://localhost:8082/api/products
+
+###
+
+### Order Service API Requests (Port 8083)
+
+# Create Order
+# Ensure User with ID 1 and Product with ID 1 exist in their respective services first.
+POST http://localhost:8083/api/orders
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "productId": 1,
+  "quantity": 2
+}
+
+###
+
+# Get Order by ID
+GET http://localhost:8083/api/orders/1
+
+###
+
+# Get All Orders
+GET http://localhost:8083/api/orders
